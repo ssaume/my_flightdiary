@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flight Diary Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div><p class="eyebrow">FLIGHT DIARY · 2023–2026</p><h1>旅行頻率與停留分析</h1><p class="subtitle">只計算已出發且已完成的旅程，時間顆粒度為時、分、秒。</p></div>
+  <div class="status"><span class="dot"></span><span>統計截止：2026/07/28</span></div>
+</header>
+<main>
+  <section class="toolbar card">
+    <label>年份<select id="yearFilter"><option value="all">2023–2026</option></select></label>
+    <label>國家／地區<select id="countryFilter"><option value="all">全部</option></select></label>
+    <button id="resetBtn">重設篩選</button>
+  </section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="grid two">
+    <article class="card"><div class="section-head"><div><p class="eyebrow">YEARLY PERFORMANCE</p><h2>年度造訪次數</h2></div></div><div id="visitChart" class="chart"></div></article>
+    <article class="card"><div class="section-head"><div><p class="eyebrow">TIME SPENT</p><h2>年度停留時間</h2></div></div><div id="stayChart" class="chart"></div></article>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><div><p class="eyebrow">ANNUAL SUMMARY</p><h2>2023–2026 年度實績</h2></div><button class="ghost" id="downloadCsv">下載目前表格 CSV</button></div>
+    <div class="table-wrap"><table><thead><tr><th>年份</th><th>國家／地區</th><th>造訪次數</th><th>平均到訪間隔</th><th>平均每次停留</th><th>年度總停留</th></tr></thead><tbody id="annualBody"></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><div><p class="eyebrow">TRIP DETAILS</p><h2>每次停留明細</h2></div><span id="detailCount" class="badge"></span></div>
+    <div class="table-wrap"><table><thead><tr><th>國家／地區</th><th>抵達時間</th><th>離境時間</th><th>停留時間</th><th>抵達航班</th><th>離境航班</th></tr></thead><tbody id="detailBody"></tbody></table></div>
+  </section>
+
+  <section class="card note"><h2>計算規則</h2><p>一次造訪從抵達該國的當地時間開始，到離開該國的當地時間結束；國內線不會重複計次。平均到訪間隔依同年度相鄰兩次抵達時間計算。尚未出發或尚未完成的行程不列入。</p><div id="excluded"></div></section>
+</main>
+<footer>Static dashboard for GitHub Pages · No backend required</footer>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
