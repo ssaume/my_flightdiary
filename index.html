@@ -26,7 +26,12 @@
 
   <section class="card" id="annualTableCard">
     <div class="section-head"><div><p class="eyebrow">ANNUAL SUMMARY</p><h2 id="annualTitle">年度實績</h2></div><button class="ghost" id="downloadCsv">下載目前表格 CSV</button></div>
-    <div class="table-wrap"><table><thead><tr><th>年份</th><th>國家／地區</th><th>造訪次數</th><th>平均到訪間隔</th><th>平均每次停留</th><th>年度總停留</th></tr></thead><tbody id="annualBody"></tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th id="annualPeriodHead">期間</th><th>國家／地區</th><th>造訪次數</th><th>平均到訪間隔</th><th>平均每次停留</th><th>年度總停留</th></tr></thead><tbody id="annualBody"></tbody></table></div>
+  </section>
+
+  <section class="card" id="aircraftTableCard">
+    <div class="section-head"><div><p class="eyebrow">AIRCRAFT SUMMARY</p><h2 id="aircraftTitle">機型使用實績</h2><p class="hint" id="aircraftHint">點擊機型可篩選下方所有航班資料</p></div><span id="aircraftCount" class="badge"></span></div>
+    <div class="table-wrap"><table><thead><tr><th>機型</th><th>搭乘次數</th><th>平均使用間隔</th><th>平均飛行時間</th><th>累積飛行時間</th><th>使用年度</th></tr></thead><tbody id="aircraftBody"></tbody></table></div>
   </section>
 
   <section class="card" id="detailsCard">
@@ -44,5 +49,5 @@
 </main>
 <footer>Static dashboard for GitHub Pages · No backend required</footer>
 <noscript><div class="card">此儀表板需要啟用 JavaScript。</div></noscript>
-<script src="data.js?v=4"></script><script src="app.js?v=4"></script>
+<script src="data.js?v=6"></script><script src="app.js?v=6"></script>
 </body></html>

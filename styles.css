@@ -15,3 +15,6 @@ main{max-width:1240px;margin:-24px auto 0;padding:0 22px 50px}.card{background:v
 .wide{max-height:560px}
 .future-row{opacity:.55;background:#f8fafc}
 #detailsCard{scroll-margin-top:16px}
+.aircraft-link{border:0;background:transparent;color:#176b87;font:inherit;font-weight:700;cursor:pointer;padding:4px 6px;border-radius:6px;text-align:left}
+.aircraft-link:hover{background:#e7f4f5;text-decoration:underline}
+.aircraft-row.selected{background:#e7f4f5;box-shadow:inset 4px 0 0 #176b87}
