@@ -7,12 +7,12 @@
 </head>
 <body>
 <header class="hero">
-  <div><p class="eyebrow">FLIGHT DIARY · 2023–2026</p><h1>旅行頻率與停留分析</h1><p class="subtitle">只計算已出發且已完成的旅程，時間顆粒度為時、分、秒。</p></div>
+  <div><p class="eyebrow">FLIGHT DIARY · <span id="heroRange">2011–2026</span></p><h1>旅行頻率與停留分析</h1><p class="subtitle">只計算已出發且已完成的旅程，時間顆粒度為時、分、秒。</p></div>
   <div class="status"><span class="dot"></span><span>統計截止：2026/07/28</span></div>
 </header>
 <main>
   <section class="toolbar card">
-    <label>年份<select id="yearFilter"><option value="all">2023–2026</option></select></label>
+    <label>年份<select id="yearFilter"><option value="all">全部年度</option></select></label>
     <label>國家／地區<select id="countryFilter"><option value="all">全部</option></select></label>
     <button id="resetBtn">重設篩選</button>
   </section>
@@ -24,14 +24,20 @@
     <article class="card"><div class="section-head"><div><p class="eyebrow">TIME SPENT</p><h2>年度停留時間</h2></div></div><div id="stayChart" class="chart"></div></article>
   </section>
 
-  <section class="card">
-    <div class="section-head"><div><p class="eyebrow">ANNUAL SUMMARY</p><h2>2023–2026 年度實績</h2></div><button class="ghost" id="downloadCsv">下載目前表格 CSV</button></div>
+  <section class="card" id="annualTableCard">
+    <div class="section-head"><div><p class="eyebrow">ANNUAL SUMMARY</p><h2 id="annualTitle"><span id="rangeLabel">2011–2026</span> 年度實績</h2></div><button class="ghost" id="downloadCsv">下載目前表格 CSV</button></div>
     <div class="table-wrap"><table><thead><tr><th>年份</th><th>國家／地區</th><th>造訪次數</th><th>平均到訪間隔</th><th>平均每次停留</th><th>年度總停留</th></tr></thead><tbody id="annualBody"></tbody></table></div>
   </section>
 
+  <section class="card" id="detailsCard">
+    <div class="section-head"><div><p class="eyebrow">TRIP DETAILS</p><h2>每次停留明細</h2><p id="detailHint" class="hint"></p></div><span id="detailCount" class="badge"></span></div>
+    <div class="table-wrap"><table><thead><tr><th>國家／地區</th><th>抵達時間</th><th>離境時間</th><th>停留時間</th><th>抵達航班</th><th>離境航班</th><th>抵達機場</th><th>離境機場</th></tr></thead><tbody id="detailBody"></tbody></table></div>
+  </section>
+
+
   <section class="card">
-    <div class="section-head"><div><p class="eyebrow">TRIP DETAILS</p><h2>每次停留明細</h2></div><span id="detailCount" class="badge"></span></div>
-    <div class="table-wrap"><table><thead><tr><th>國家／地區</th><th>抵達時間</th><th>離境時間</th><th>停留時間</th><th>抵達航班</th><th>離境航班</th></tr></thead><tbody id="detailBody"></tbody></table></div>
+    <div class="section-head"><div><p class="eyebrow">ALL FLIGHTS</p><h2>所有航班資料</h2><p class="hint">包含完整 162 筆原始航班；未出發航班以淡色標示且不納入統計。</p></div><span id="flightCount" class="badge"></span></div>
+    <div class="table-wrap wide"><table><thead><tr><th>日期</th><th>航班</th><th>出發地</th><th>目的地</th><th>起飛時間</th><th>抵達時間</th><th>飛行時間</th><th>航空公司</th><th>機型</th><th>註冊號</th><th>座位</th><th>狀態</th></tr></thead><tbody id="flightBody"></tbody></table></div>
   </section>
 
   <section class="card note"><h2>計算規則</h2><p>一次造訪從抵達該國的當地時間開始，到離開該國的當地時間結束；國內線不會重複計次。平均到訪間隔依同年度相鄰兩次抵達時間計算。尚未出發或尚未完成的行程不列入。</p><div id="excluded"></div></section>

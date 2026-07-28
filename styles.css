@@ -8,3 +8,10 @@ main{max-width:1240px;margin:-24px auto 0;padding:0 22px 50px}.card{background:v
 .table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-size:12px;letter-spacing:.04em;background:#f8fafb;position:sticky;top:0}tbody tr:hover{background:#f5fafb}.note p{color:var(--muted);line-height:1.75}.excluded{margin-top:14px;padding:12px;background:#fff8e7;border-radius:10px;color:#725a24;font-size:13px}footer{text-align:center;color:var(--muted);padding:24px}
 @media(max-width:820px){.hero{align-items:start;flex-direction:column}.kpis{grid-template-columns:repeat(2,1fr)}.grid.two{grid-template-columns:1fr}.chart{min-height:250px}.status{font-size:12px}}
 @media(max-width:520px){.kpis{grid-template-columns:1fr}.toolbar{align-items:stretch}.toolbar label,.toolbar button{width:100%}select{width:100%}.card{padding:16px;border-radius:14px}.hero{padding-top:34px;padding-bottom:45px}}
+.country-link{border:0;background:transparent;color:#2563eb;font:inherit;font-weight:700;cursor:pointer;padding:4px 6px;border-radius:6px}
+.country-link:hover{background:#eaf2ff;text-decoration:underline}
+.annual-row.selected{background:#eaf2ff;box-shadow:inset 4px 0 0 #2563eb}
+.hint{margin:.35rem 0 0;color:#64748b;font-size:.88rem}
+.wide{max-height:560px}
+.future-row{opacity:.55;background:#f8fafc}
+#detailsCard{scroll-margin-top:16px}
