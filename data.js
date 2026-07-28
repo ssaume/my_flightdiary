@@ -79,8 +79,8 @@ window.FLIGHT_DATA = {
       "country": "香港",
       "visits": 2,
       "avg_interval_seconds": 15633600,
-      "avg_stay_seconds": 59424000,
-      "total_stay_seconds": 118848000
+      "avg_stay_seconds": 123750,
+      "total_stay_seconds": 247500
     },
     {
       "year": 2023,
@@ -413,10 +413,10 @@ window.FLIGHT_DATA = {
       "arrival": "2019-07-05T09:50:00",
       "arrivalAirport": "Hong Kong / Hong Kong International (HKG/VHHH)",
       "arrivalFlight": "CX407",
-      "departure": "2023-04-09T16:35:00",
-      "departureAirport": "Taipei / Taoyuan (TPE/RCTP)",
-      "departureFlight": "CI503",
-      "durationSeconds": 118737900,
+      "departure": "2019-07-07T00:00:00",
+      "departureAirport": "香港港口（海路；未提供確切時間）",
+      "departureFlight": "海路",
+      "durationSeconds": 137400,
       "id": 21
     },
     {
