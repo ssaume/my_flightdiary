@@ -8,8 +8,10 @@ let selectedSummaryCountry = null;
 years.forEach(y => yearEl.insertAdjacentHTML('beforeend', `<option value="${y}">${y}</option>`));
 countries.forEach(c => countryEl.insertAdjacentHTML('beforeend', `<option value="${c}">${c}</option>`));
 
-document.querySelector('#rangeLabel').textContent = `${years[0]}–${years.at(-1)}`;
-document.querySelector('#heroRange').textContent = `${years[0]}–${years.at(-1)}`;
+const rangeLabel = document.querySelector('#rangeLabel');
+const heroRange = document.querySelector('#heroRange');
+if (rangeLabel) rangeLabel.textContent = `${years[0]}–${years.at(-1)}`;
+if (heroRange) heroRange.textContent = `${years[0]}–${years.at(-1)}`;
 
 const pad = n => String(n).padStart(2,'0');
 function dur(sec){
