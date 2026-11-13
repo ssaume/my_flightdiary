@@ -7,7 +7,7 @@ let selectedSummaryCountry=null,selectedAircraft=null;
 years.forEach(y=>yearEl.insertAdjacentHTML('beforeend',`<option value="${y}">${y}</option>`));
 countries.forEach(c=>countryEl.insertAdjacentHTML('beforeend',`<option value="${c}">${c}</option>`));
 const pad=n=>String(n).padStart(2,'0');
-function dur(sec){if(sec==null||!Number.isFinite(Number(sec)))return'—';sec=Math.max(0,Math.round(Number(sec)));const d=Math.floor(sec/86400);sec%=86400;const h=Math.floor(sec/3600);sec%=3600;const m=Math.floor(sec/60),s=sec%60;return`${d}天 ${pad(h)}時${pad(m)}分${pad(s)}秒`;}
+function dur(sec){if(sec==null||!Number.isFinite(Number(sec)))return'—';sec=Math.max(0,Math.round(Number(sec)));const d=Math.floor(sec/86400);sec%=86400;const h=Math.floor(sec/3600);sec%=3600;const m=Math.floor(sec/60),s=sec%60;return`${d}天 ${pad(h)}時${pad(m)}分${s?pad(s)+'秒':''}`;}
 const dt=s=>s?s.replace('T',' '):'—';
 const esc=(v='')=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const diff=(a,b)=>Math.max(0,(new Date(b)-new Date(a))/1000);
@@ -41,7 +41,7 @@ function yearlyCountryChart(id,legendId,key){
   chartEl.style.minWidth='0';
   chartEl.innerHTML=points.map(point=>{
     const height=point.total/max*145;
-    const segments=point.items.map(item=>{
+    const segments=point.items.slice().sort((a,b)=>b.value-a.value||a.country.localeCompare(b.country,'zh-Hant')).map(item=>{
       const portion=point.total?item.value/point.total*100:0;
       const detail=isVisits?`${item.value} 次`:dur(item.value);
       return `<div class="stack-segment" style="height:${portion}%;background:${colors.get(item.country)}" title="${esc(point.year)} · ${esc(item.country)}：${detail}" aria-label="${esc(item.country)}：${detail}"></div>`;

@@ -87,3 +87,10 @@ th,td{padding:12px 8px;overflow-wrap:anywhere}
 .stack-bar{order:2!important;flex-shrink:0!important;max-height:145px!important}
 .stack-year{position:static!important;order:3!important;flex:0 0 22px!important;line-height:22px!important;margin-top:5px!important;font-size:12px!important;white-space:nowrap!important}
 @media(max-width:760px){.chart{grid-auto-rows:205px!important;row-gap:22px!important}}
+
+/* v11: full-width vertical charts */
+.yearly-charts{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:20px!important}
+.yearly-charts>.card{min-width:0;width:100%;box-sizing:border-box}
+.yearly-charts .chart{grid-template-columns:repeat(8,minmax(0,1fr))}
+@media(max-width:760px){.yearly-charts .chart{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:390px){.yearly-charts .chart{grid-template-columns:repeat(3,minmax(0,1fr))}}
