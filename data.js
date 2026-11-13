@@ -1,6 +1,6 @@
 window.FLIGHT_DATA = {
-  "generatedAt": "2026-07-28",
-  "cutoff": "2026-07-28T23:59:59+08:00",
+  "generatedAt": "2026-11-13",
+  "cutoff": "2026-11-13T03:17:00.000Z",
   "annual": [
     {
       "year": 2011,
@@ -68,19 +68,19 @@ window.FLIGHT_DATA = {
     },
     {
       "year": 2019,
-      "country": "日本",
-      "visits": 4,
-      "avg_interval_seconds": 7825900,
-      "avg_stay_seconds": 218775,
-      "total_stay_seconds": 875100
-    },
-    {
-      "year": 2019,
       "country": "香港",
       "visits": 1,
       "avg_interval_seconds": null,
       "avg_stay_seconds": 110100,
       "total_stay_seconds": 110100
+    },
+    {
+      "year": 2019,
+      "country": "日本",
+      "visits": 4,
+      "avg_interval_seconds": 7825700,
+      "avg_stay_seconds": 218325,
+      "total_stay_seconds": 873300
     },
     {
       "year": 2023,
@@ -92,19 +92,19 @@ window.FLIGHT_DATA = {
     },
     {
       "year": 2023,
-      "country": "日本",
-      "visits": 5,
-      "avg_interval_seconds": 3653700,
-      "avg_stay_seconds": 296760,
-      "total_stay_seconds": 1483800
-    },
-    {
-      "year": 2023,
       "country": "泰國",
       "visits": 2,
       "avg_interval_seconds": 10901400,
       "avg_stay_seconds": 247350,
       "total_stay_seconds": 494700
+    },
+    {
+      "year": 2023,
+      "country": "日本",
+      "visits": 5,
+      "avg_interval_seconds": 3653700,
+      "avg_stay_seconds": 296940,
+      "total_stay_seconds": 1484700
     },
     {
       "year": 2024,
@@ -116,19 +116,19 @@ window.FLIGHT_DATA = {
     },
     {
       "year": 2024,
-      "country": "日本",
-      "visits": 8,
-      "avg_interval_seconds": 3329957,
-      "avg_stay_seconds": 272550,
-      "total_stay_seconds": 2180400
-    },
-    {
-      "year": 2024,
       "country": "泰國",
       "visits": 2,
       "avg_interval_seconds": 14239500,
       "avg_stay_seconds": 246600,
       "total_stay_seconds": 493200
+    },
+    {
+      "year": 2024,
+      "country": "日本",
+      "visits": 8,
+      "avg_interval_seconds": 3329957,
+      "avg_stay_seconds": 272550,
+      "total_stay_seconds": 2180400
     },
     {
       "year": 2025,
@@ -156,27 +156,27 @@ window.FLIGHT_DATA = {
     },
     {
       "year": 2026,
+      "country": "泰國",
+      "visits": 5,
+      "avg_interval_seconds": 4405575,
+      "avg_stay_seconds": 403020,
+      "total_stay_seconds": 2015100
+    },
+    {
+      "year": 2026,
+      "country": "日本",
+      "visits": 12,
+      "avg_interval_seconds": 2075591,
+      "avg_stay_seconds": 291825,
+      "total_stay_seconds": 3501900
+    },
+    {
+      "year": 2026,
       "country": "中國",
       "visits": 1,
       "avg_interval_seconds": null,
       "avg_stay_seconds": 1093800,
       "total_stay_seconds": 1093800
-    },
-    {
-      "year": 2026,
-      "country": "日本",
-      "visits": 7,
-      "avg_interval_seconds": 2584000,
-      "avg_stay_seconds": 314014,
-      "total_stay_seconds": 2198100
-    },
-    {
-      "year": 2026,
-      "country": "泰國",
-      "visits": 4,
-      "avg_interval_seconds": 3842300,
-      "avg_stay_seconds": 412575,
-      "total_stay_seconds": 1650300
     },
     {
       "year": 2026,
@@ -350,9 +350,9 @@ window.FLIGHT_DATA = {
     },
     {
       "country": "日本",
-      "arrival": "2019-03-08T20:35:00",
+      "arrival": "2019-03-08T20:55:00",
       "departure": "2019-03-10T20:35:00",
-      "durationSeconds": 172800,
+      "durationSeconds": 171600,
       "arrivalFlight": "CI158",
       "departureFlight": "CI117",
       "arrivalAirport": "Osaka / Kansai (KIX/RJBB)",
@@ -380,9 +380,9 @@ window.FLIGHT_DATA = {
     },
     {
       "country": "日本",
-      "arrival": "2019-12-05T14:10:00",
+      "arrival": "2019-12-05T14:20:00",
       "departure": "2019-12-08T12:40:00",
-      "durationSeconds": 253800,
+      "durationSeconds": 253200,
       "arrivalFlight": "NH824",
       "departureFlight": "NH853",
       "arrivalAirport": "Tokyo / Narita (NRT/RJAA)",
@@ -470,9 +470,9 @@ window.FLIGHT_DATA = {
     },
     {
       "country": "日本",
-      "arrival": "2023-11-03T20:40:00",
+      "arrival": "2023-11-03T20:25:00",
       "departure": "2023-11-05T20:00:00",
-      "durationSeconds": 170400,
+      "durationSeconds": 171300,
       "arrivalFlight": "CI106",
       "departureFlight": "CI109",
       "arrivalAirport": "Tokyo / Narita (NRT/RJAA)",
@@ -850,9 +850,9 @@ window.FLIGHT_DATA = {
     },
     {
       "country": "日本",
-      "arrival": "2026-04-01T20:30:00",
+      "arrival": "2026-04-01T20:50:00",
       "departure": "2026-04-06T20:00:00",
-      "durationSeconds": 430200,
+      "durationSeconds": 429000,
       "arrivalFlight": "CI106",
       "departureFlight": "CI109",
       "arrivalAirport": "Tokyo / Narita (NRT/RJAA)",
@@ -937,6 +937,66 @@ window.FLIGHT_DATA = {
       "departureFlight": "CI101",
       "arrivalAirport": "Tokyo / Haneda (HND/RJTT)",
       "departureAirport": "Tokyo / Narita (NRT/RJAA)"
+    },
+    {
+      "country": "日本",
+      "arrival": "2026-07-31T18:05:00",
+      "departure": "2026-08-02T19:10:00",
+      "durationSeconds": 176700,
+      "arrivalFlight": "CI172",
+      "departureFlight": "CI129",
+      "arrivalAirport": "Osaka / Kansai (KIX/RJBB)",
+      "departureAirport": "Fukuoka / Fukuoka (FUK/RJFF)"
+    },
+    {
+      "country": "泰國",
+      "arrival": "2026-08-03T12:10:00",
+      "departure": "2026-08-07T17:30:00",
+      "durationSeconds": 364800,
+      "arrivalFlight": "CI831",
+      "departureFlight": "CI836",
+      "arrivalAirport": "Bangkok / Suvarnabhumi (BKK/VTBS)",
+      "departureAirport": "Bangkok / Suvarnabhumi (BKK/VTBS)"
+    },
+    {
+      "country": "日本",
+      "arrival": "2026-09-04T09:55:00",
+      "departure": "2026-09-07T21:00:00",
+      "durationSeconds": 299100,
+      "arrivalFlight": "CI110",
+      "departureFlight": "CI117",
+      "arrivalAirport": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "departureAirport": "Fukuoka / Fukuoka (FUK/RJFF)"
+    },
+    {
+      "country": "日本",
+      "arrival": "2026-09-25T10:30:00",
+      "departure": "2026-09-28T19:05:00",
+      "durationSeconds": 290100,
+      "arrivalFlight": "CI278",
+      "departureFlight": "CI179",
+      "arrivalAirport": "Takamatsu / Takamatsu (TAK/RJOT)",
+      "departureAirport": "Takamatsu / Takamatsu (TAK/RJOT)"
+    },
+    {
+      "country": "日本",
+      "arrival": "2026-10-03T09:55:00",
+      "departure": "2026-10-04T21:00:00",
+      "durationSeconds": 126300,
+      "arrivalFlight": "CI110",
+      "departureFlight": "CI117",
+      "arrivalAirport": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "departureAirport": "Fukuoka / Fukuoka (FUK/RJFF)"
+    },
+    {
+      "country": "日本",
+      "arrival": "2026-10-08T17:40:00",
+      "departure": "2026-10-13T12:20:00",
+      "durationSeconds": 412800,
+      "arrivalFlight": "CI194",
+      "departureFlight": "CI119",
+      "arrivalAirport": "Kumamoto / Kumamoto (KMJ/RJFT)",
+      "departureAirport": "Kagoshima / Kagoshima (KOJ/RJFK)"
     }
   ],
   "flights": [
@@ -1543,7 +1603,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "台灣",
       "toCountry": "日本",
       "departure": "2019-03-08T17:10:00",
-      "arrival": "2019-03-08T20:35:00",
+      "arrival": "2019-03-08T20:55:00",
       "duration": "02:25:00",
       "durationSeconds": 8700,
       "airline": "China Airlines (CI/CAL)",
@@ -1594,13 +1654,30 @@ window.FLIGHT_DATA = {
       "fromCountry": "日本",
       "toCountry": "台灣",
       "departure": "2019-06-02T12:40:00",
-      "arrival": "2019-06-02T15:30:00",
+      "arrival": "2019-06-02T15:00:00",
       "duration": "03:50:00",
       "durationSeconds": 13800,
       "airline": "China Airlines (CI/CAL)",
       "aircraft": "Boeing 737-800 (B738)",
       "registration": "B-18651",
       "seatNumber": "22H",
+      "completed": true
+    },
+    {
+      "date": "2019-07-05",
+      "flight": "CX407",
+      "from": "Taipei / Taoyuan (TPE/RCTP)",
+      "to": "Hong Kong / Hong Kong International (HKG/VHHH)",
+      "fromCountry": "台灣",
+      "toCountry": "香港",
+      "departure": "2019-07-05T08:01:00",
+      "arrival": "2019-07-05T09:50:00",
+      "duration": "01:50:00",
+      "durationSeconds": 6600,
+      "airline": "Cathay Pacific (CX/CPA)",
+      "aircraft": "Airbus A330-300 (A333)",
+      "registration": "B-LAZ",
+      "seatNumber": "40G",
       "completed": true
     },
     {
@@ -1645,7 +1722,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "台灣",
       "toCountry": "日本",
       "departure": "2019-12-05T10:00:00",
-      "arrival": "2019-12-05T14:10:00",
+      "arrival": "2019-12-05T14:20:00",
       "duration": "03:10:00",
       "durationSeconds": 11400,
       "airline": "All Nippon Airways (NH/ANA)",
@@ -1730,7 +1807,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "中國",
       "toCountry": "台灣",
       "departure": "2023-04-14T12:05:00",
-      "arrival": "2023-04-14T14:10:00",
+      "arrival": "2023-04-14T14:15:00",
       "duration": "02:05:00",
       "durationSeconds": 7500,
       "airline": "China Airlines (CI/CAL)",
@@ -1985,7 +2062,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "台灣",
       "toCountry": "日本",
       "departure": "2023-11-03T16:25:00",
-      "arrival": "2023-11-03T20:40:00",
+      "arrival": "2023-11-03T20:25:00",
       "duration": "03:15:00",
       "durationSeconds": 11700,
       "airline": "China Airlines (CI/CAL)",
@@ -3090,7 +3167,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "泰國",
       "toCountry": "台灣",
       "departure": "2025-11-01T10:55:00",
-      "arrival": "2025-11-01T15:35:00",
+      "arrival": "2025-11-01T15:25:00",
       "duration": "03:40:00",
       "durationSeconds": 13200,
       "airline": "China Airlines (CI/CAL)",
@@ -3328,7 +3405,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "台灣",
       "toCountry": "日本",
       "departure": "2026-04-01T16:25:00",
-      "arrival": "2026-04-01T20:30:00",
+      "arrival": "2026-04-01T20:50:00",
       "duration": "03:05:00",
       "durationSeconds": 11100,
       "airline": "China Airlines (CI/CAL)",
@@ -3345,7 +3422,7 @@ window.FLIGHT_DATA = {
       "fromCountry": "日本",
       "toCountry": "台灣",
       "departure": "2026-04-06T20:00:00",
-      "arrival": "2026-04-06T23:15:00",
+      "arrival": "2026-04-06T22:45:00",
       "duration": "04:15:00",
       "durationSeconds": 15300,
       "airline": "China Airlines (CI/CAL)",
@@ -3622,9 +3699,9 @@ window.FLIGHT_DATA = {
       "durationSeconds": 9900,
       "airline": "China Airlines (CI/CAL)",
       "aircraft": "Airbus A330-300 (A333)",
-      "registration": "",
-      "seatNumber": "",
-      "completed": false
+      "registration": "B-18315",
+      "seatNumber": "5J",
+      "completed": true
     },
     {
       "date": "2026-08-01",
@@ -3639,9 +3716,9 @@ window.FLIGHT_DATA = {
       "durationSeconds": 3600,
       "airline": "Japan Airlines (JL/JAL)",
       "aircraft": "Embraer ERJ-170 (E170)",
-      "registration": "",
+      "registration": "JA227J",
       "seatNumber": "3C",
-      "completed": false
+      "completed": true
     },
     {
       "date": "2026-08-02",
@@ -3650,15 +3727,15 @@ window.FLIGHT_DATA = {
       "to": "Fukuoka / Fukuoka (FUK/RJFF)",
       "fromCountry": "日本",
       "toCountry": "日本",
-      "departure": "2026-08-02T13:00:00",
-      "arrival": "2026-08-02T13:50:00",
+      "departure": "2026-08-02T13:05:00",
+      "arrival": "2026-08-02T13:55:00",
       "duration": "00:50:00",
       "durationSeconds": 3000,
       "airline": "Japan Airlines (JL/JAL)",
-      "aircraft": "Embraer ERJ-170 (E170)",
-      "registration": "",
+      "aircraft": "Embraer ERJ-190 (E190)",
+      "registration": "JA248J",
       "seatNumber": "3A",
-      "completed": false
+      "completed": true
     },
     {
       "date": "2026-08-02",
@@ -3672,28 +3749,215 @@ window.FLIGHT_DATA = {
       "duration": "02:25:00",
       "durationSeconds": 8700,
       "airline": "China Airlines (CI/CAL)",
-      "aircraft": "Airbus A321LR (A21N)",
-      "registration": "",
+      "aircraft": "Airbus A321neo (A21N)",
+      "registration": "B-18123",
       "seatNumber": "10H",
-      "completed": false
+      "completed": true
+    },
+    {
+      "date": "2026-08-03",
+      "flight": "CI831",
+      "from": "Taipei / Taoyuan (TPE/RCTP)",
+      "to": "Bangkok / Suvarnabhumi (BKK/VTBS)",
+      "fromCountry": "台灣",
+      "toCountry": "泰國",
+      "departure": "2026-08-03T09:25:00",
+      "arrival": "2026-08-03T12:10:00",
+      "duration": "03:45:00",
+      "durationSeconds": 13500,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A350-900 (A359)",
+      "registration": "B-18920",
+      "seatNumber": "46H",
+      "completed": true
+    },
+    {
+      "date": "2026-08-07",
+      "flight": "CI836",
+      "from": "Bangkok / Suvarnabhumi (BKK/VTBS)",
+      "to": "Taipei / Taoyuan (TPE/RCTP)",
+      "fromCountry": "泰國",
+      "toCountry": "台灣",
+      "departure": "2026-08-07T17:30:00",
+      "arrival": "2026-08-07T22:05:00",
+      "duration": "03:35:00",
+      "durationSeconds": 12900,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A330-300 (A333)",
+      "registration": "B-18308",
+      "seatNumber": "17J",
+      "completed": true
+    },
+    {
+      "date": "2026-09-04",
+      "flight": "CI110",
+      "from": "Taipei / Taoyuan (TPE/RCTP)",
+      "to": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "fromCountry": "台灣",
+      "toCountry": "日本",
+      "departure": "2026-09-04T06:50:00",
+      "arrival": "2026-09-04T09:55:00",
+      "duration": "02:05:00",
+      "durationSeconds": 7500,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A330-300 (A333)",
+      "registration": "B-18306",
+      "seatNumber": "3J",
+      "completed": true
+    },
+    {
+      "date": "2026-09-04",
+      "flight": "JL3629",
+      "from": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "to": "Miyazaki / Miyazaki (KMI/RJFM)",
+      "fromCountry": "日本",
+      "toCountry": "日本",
+      "departure": "2026-09-04T12:40:00",
+      "arrival": "2026-09-04T13:30:00",
+      "duration": "00:50:00",
+      "durationSeconds": 3000,
+      "airline": "Japan Airlines (JL/JAL)",
+      "aircraft": "Embraer ERJ-170 (E170)",
+      "registration": "JA214J",
+      "seatNumber": "6H",
+      "completed": true
+    },
+    {
+      "date": "2026-09-07",
+      "flight": "JL3624",
+      "from": "Miyazaki / Miyazaki (KMI/RJFM)",
+      "to": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "fromCountry": "日本",
+      "toCountry": "日本",
+      "departure": "2026-09-07T08:30:00",
+      "arrival": "2026-09-07T09:20:00",
+      "duration": "00:50:00",
+      "durationSeconds": 3000,
+      "airline": "Japan Airlines (JL/JAL)",
+      "aircraft": "Embraer ERJ-170 (E170)",
+      "registration": "JA213J",
+      "seatNumber": "5H",
+      "completed": true
+    },
+    {
+      "date": "2026-09-07",
+      "flight": "CI117",
+      "from": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "to": "Taipei / Taoyuan (TPE/RCTP)",
+      "fromCountry": "日本",
+      "toCountry": "台灣",
+      "departure": "2026-09-07T21:00:00",
+      "arrival": "2026-09-07T22:30:00",
+      "duration": "02:30:00",
+      "durationSeconds": 9000,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A330-300 (A333)",
+      "registration": "B-18309",
+      "seatNumber": "12J",
+      "completed": true
+    },
+    {
+      "date": "2026-09-25",
+      "flight": "CI278",
+      "from": "Taipei / Taoyuan (TPE/RCTP)",
+      "to": "Takamatsu / Takamatsu (TAK/RJOT)",
+      "fromCountry": "台灣",
+      "toCountry": "日本",
+      "departure": "2026-09-25T06:55:00",
+      "arrival": "2026-09-25T10:30:00",
+      "duration": "02:35:00",
+      "durationSeconds": 9300,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A321neo (A21N)",
+      "registration": "B-18115",
+      "seatNumber": "55H",
+      "completed": true
+    },
+    {
+      "date": "2026-09-28",
+      "flight": "CI179",
+      "from": "Takamatsu / Takamatsu (TAK/RJOT)",
+      "to": "Taipei / Taoyuan (TPE/RCTP)",
+      "fromCountry": "日本",
+      "toCountry": "台灣",
+      "departure": "2026-09-28T19:05:00",
+      "arrival": "2026-09-28T20:55:00",
+      "duration": "02:50:00",
+      "durationSeconds": 10200,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A321neo (A21N)",
+      "registration": "B-18123",
+      "seatNumber": "47H",
+      "completed": true
+    },
+    {
+      "date": "2026-10-03",
+      "flight": "CI110",
+      "from": "Taipei / Taoyuan (TPE/RCTP)",
+      "to": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "fromCountry": "台灣",
+      "toCountry": "日本",
+      "departure": "2026-10-03T06:50:00",
+      "arrival": "2026-10-03T09:55:00",
+      "duration": "02:05:00",
+      "durationSeconds": 7500,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A330-300 (A333)",
+      "registration": "B-18311",
+      "seatNumber": "17J",
+      "completed": true
+    },
+    {
+      "date": "2026-10-04",
+      "flight": "CI117",
+      "from": "Fukuoka / Fukuoka (FUK/RJFF)",
+      "to": "Taipei / Taoyuan (TPE/RCTP)",
+      "fromCountry": "日本",
+      "toCountry": "台灣",
+      "departure": "2026-10-04T21:00:00",
+      "arrival": "2026-10-04T22:30:00",
+      "duration": "02:30:00",
+      "durationSeconds": 9000,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A330-300 (A333)",
+      "registration": "B-18309",
+      "seatNumber": "44G",
+      "completed": true
+    },
+    {
+      "date": "2026-10-08",
+      "flight": "CI194",
+      "from": "Taipei / Taoyuan (TPE/RCTP)",
+      "to": "Kumamoto / Kumamoto (KMJ/RJFT)",
+      "fromCountry": "台灣",
+      "toCountry": "日本",
+      "departure": "2026-10-08T14:30:00",
+      "arrival": "2026-10-08T17:40:00",
+      "duration": "02:10:00",
+      "durationSeconds": 7800,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A321neo (A21N)",
+      "registration": "B-18118",
+      "seatNumber": "46C",
+      "completed": true
+    },
+    {
+      "date": "2026-10-13",
+      "flight": "CI119",
+      "from": "Kagoshima / Kagoshima (KOJ/RJFK)",
+      "to": "Taipei / Taoyuan (TPE/RCTP)",
+      "fromCountry": "日本",
+      "toCountry": "台灣",
+      "departure": "2026-10-13T12:20:00",
+      "arrival": "2026-10-13T13:30:00",
+      "duration": "02:10:00",
+      "durationSeconds": 7800,
+      "airline": "China Airlines (CI/CAL)",
+      "aircraft": "Airbus A321neo (A21N)",
+      "registration": "B-18103",
+      "seatNumber": "47C",
+      "completed": true
     }
   ],
-  "excludedFlights": [
-    {
-      "date": "2026-07-31",
-      "flight": "CI172"
-    },
-    {
-      "date": "2026-08-01",
-      "flight": "JL2445"
-    },
-    {
-      "date": "2026-08-02",
-      "flight": "JL3628"
-    },
-    {
-      "date": "2026-08-02",
-      "flight": "CI129"
-    }
-  ]
+  "excludedFlights": []
 };

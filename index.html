@@ -8,13 +8,25 @@
 <body>
 <header class="hero">
   <div><p class="eyebrow">FLIGHT DIARY · ALL YEARS</p><h1>旅行頻率與停留分析</h1><p class="subtitle">只計算已出發且已完成的旅程，時間顆粒度為時、分、秒。</p></div>
-  <div class="status"><span class="dot"></span><span>統計截止：2026/07/28</span></div>
+  <div class="status"><span class="dot"></span><span>統計截止：<span id="cutoffLabel"></span></span></div>
 </header>
 <main>
   <section class="toolbar card">
     <label>年份<select id="yearFilter"><option value="all">全部年度</option></select></label>
     <label>國家／地區<select id="countryFilter"><option value="all">全部</option></select></label>
     <button id="resetBtn">重設篩選</button>
+  </section>
+
+  <section class="card upload-card" id="uploadCard">
+    <div class="section-head"><div><p class="eyebrow">DATA MANAGEMENT</p><h2>更新 FlightDiary 資料</h2><p class="hint">上傳 myFlightradar24 匯出的 CSV，預覽後可發布到 GitHub。</p></div></div>
+    <div class="upload-grid"><label>選擇 FlightDiary CSV<input id="csvUpload" type="file" accept=".csv,text/csv"></label><div><button id="previewUpload" type="button">載入並預覽資料</button></div></div>
+    <p id="uploadStatus" class="hint" role="status" aria-live="polite"></p>
+    <details class="publish-settings"><summary>發布到 GitHub（跨裝置永久更新）</summary>
+      <p class="hint">GitHub Pages 是靜態網站。要讓其他裝置看到新資料，必須將更新提交到 GitHub Repository。請建立僅限此 Repository、Contents: Read and write 權限的 Fine-grained Personal Access Token。Token 僅用於此次發布，不會儲存。</p>
+      <div class="upload-grid"><label>GitHub 帳號／組織<input id="repoOwner" placeholder="GitHub 使用者名稱"></label><label>Repository 名稱<input id="repoName" placeholder="例如 flight-dashboard"></label><label>分支<input id="repoBranch" value="main"></label><label>GitHub Token<input id="githubToken" type="password" autocomplete="off" placeholder="github_pat_..."></label></div>
+      <button id="publishUpload" type="button" disabled>提交更新到 GitHub</button>
+      <p class="hint">提交將覆寫 Repository 根目錄的 data.js。GitHub Pages 完成部署後，其他裝置重新整理即可看到新資料。請勿在公開電腦輸入 Token。</p>
+    </details>
   </section>
 
   <section class="kpis" id="kpis"></section>
@@ -49,5 +61,5 @@
 </main>
 <footer>Static dashboard for GitHub Pages · No backend required</footer>
 <noscript><div class="card">此儀表板需要啟用 JavaScript。</div></noscript>
-<script src="data.js?v=6"></script><script src="app.js?v=6"></script>
+<script src="data.js?v=7"></script><script src="importer.js?v=7"></script><script src="upload.js?v=7"></script><script src="app.js?v=7"></script>
 </body></html>

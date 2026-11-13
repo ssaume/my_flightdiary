@@ -1,4 +1,5 @@
-const D=window.FLIGHT_DATA;
+const D=window.FLIGHT_DATA_PREVIEW||window.FLIGHT_DATA;
+document.querySelector('#cutoffLabel').textContent = (D.cutoff||'').replace('T',' ').slice(0,19) || '—';
 const yearEl=document.querySelector('#yearFilter'),countryEl=document.querySelector('#countryFilter');
 const years=[...new Set(D.annual.map(x=>x.year))].sort((a,b)=>a-b);
 const countries=[...new Set(D.annual.map(x=>x.country))].sort((a,b)=>a.localeCompare(b,'zh-Hant'));

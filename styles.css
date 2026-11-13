@@ -18,3 +18,5 @@ main{max-width:1240px;margin:-24px auto 0;padding:0 22px 50px}.card{background:v
 .aircraft-link{border:0;background:transparent;color:#176b87;font:inherit;font-weight:700;cursor:pointer;padding:4px 6px;border-radius:6px;text-align:left}
 .aircraft-link:hover{background:#e7f4f5;text-decoration:underline}
 .aircraft-row.selected{background:#e7f4f5;box-shadow:inset 4px 0 0 #176b87}
+
+.upload-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:16px 0}.upload-grid label{display:flex;flex-direction:column;gap:8px;font-size:13px}.upload-grid input{width:100%;box-sizing:border-box;min-height:42px;border:1px solid #cbd5e1;border-radius:9px;padding:10px;background:#fff;color:#172033}.upload-card details{border-top:1px solid #e2e8f0;margin-top:16px;padding-top:15px}.upload-card summary{cursor:pointer;font-weight:700}.upload-card button:disabled{opacity:.45;cursor:not-allowed}#uploadStatus{white-space:pre-wrap;line-height:1.7}
