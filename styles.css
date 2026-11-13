@@ -27,3 +27,55 @@ main{max-width:1240px;margin:-24px auto 0;padding:0 22px 50px}.card{background:v
 #detailsCard,#flightsCard,#aircraftTableCard,#annualTableCard{scroll-margin-top:100px}
 .chart-scroll{overflow-x:auto;padding-top:22px}.chart{min-height:270px;align-items:flex-end;gap:8px;padding:16px 8px 30px}.stack-group{flex:1;min-width:42px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:235px;position:relative}.stack-bar{width:min(32px,80%);min-height:0;display:flex;flex-direction:column-reverse;overflow:hidden;border-radius:5px 5px 0 0}.stack-segment{width:100%;min-height:0;flex-shrink:0}.stack-segment:hover{filter:brightness(1.2);outline:1px solid #fff}.stack-total{font-size:10px;white-space:nowrap;font-weight:800;margin-bottom:5px}.stack-year{position:absolute;top:calc(100% + 6px);font-size:11px;font-weight:700}.country-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:12px}.legend-item{display:inline-flex;gap:6px;align-items:center;font-size:12px;color:var(--muted)}.legend-item i{display:inline-block;width:10px;height:10px;border-radius:3px}
 @media(max-width:650px){#stickyFilters{padding:10px;gap:8px}#stickyFilters label{min-width:0;flex:1 1 120px}#stickyFilters select{min-width:0;width:100%}#stickyFilters button{flex:0 0 auto;width:auto}.filter-context{flex-basis:100%;margin-left:0}main{padding-left:12px;padding-right:12px}}
+
+
+/* v9 responsive layout: no horizontal page or chart/table scrolling */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+main,.card,.grid,.grid>*{min-width:0}
+.hero{min-width:0}
+.hero>div{min-width:0}
+.hero .status{white-space:normal;flex-shrink:1}
+.section-head{flex-wrap:wrap;align-items:flex-start}
+.section-head>div{min-width:0}
+.chart-scroll,.table-wrap{overflow-x:visible}
+.chart{width:100%;min-width:0!important;overflow:visible;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));align-items:end;gap:10px 5px;height:auto;min-height:0;padding:18px 4px 12px;border:0}
+.stack-group{min-width:0;height:170px;width:100%;justify-content:flex-end}
+.stack-bar{width:clamp(8px,62%,30px)}
+.stack-total{font-size:10px;max-width:100%;text-align:center;overflow:hidden;text-overflow:clip}
+.stack-year{font-size:11px}
+.country-legend{margin-top:22px}
+table{min-width:0;width:100%;table-layout:auto}
+th,td{padding:12px 8px;overflow-wrap:anywhere}
+#stickyFilters{top:0}
+@media(min-width:1100px){.chart{grid-template-columns:repeat(8,minmax(0,1fr))}.grid.two{grid-template-columns:1fr 1fr}}
+@media(max-width:1099px){.grid.two{grid-template-columns:1fr}.chart{grid-template-columns:repeat(8,minmax(0,1fr))}}
+@media(max-width:760px){
+ .hero{padding:30px 18px 48px;gap:16px}
+ .hero h1{font-size:clamp(26px,7vw,38px)}
+ main{padding:0 12px 35px}
+ .card{padding:16px}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .kpi{padding:14px;min-width:0}
+ .kpi .value{font-size:24px;overflow-wrap:anywhere}
+ #stickyFilters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px 12px}
+ #stickyFilters label,#stickyFilters select{min-width:0;width:100%}
+ #stickyFilters button{grid-column:1/-1;width:100%}
+ #stickyFilters .filter-context{grid-column:1/-1;min-width:0;font-size:11px}
+ .chart{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 8px;padding:14px 2px 10px}
+ .stack-group{height:150px}
+ .stack-total{font-size:10px}
+ .country-legend{margin-top:24px}
+ .table-wrap,.table-wrap.wide{max-height:none;overflow:visible}
+ .table-wrap table,.table-wrap thead,.table-wrap tbody,.table-wrap tr,.table-wrap td{display:block;width:100%;min-width:0}
+ .table-wrap thead{display:none}
+ .table-wrap tbody{display:grid;gap:10px}
+ .table-wrap tbody tr{border:1px solid var(--line);border-radius:12px;background:#fff;padding:8px 12px;overflow:hidden}
+ .table-wrap tbody td{display:grid;grid-template-columns:minmax(94px,34%) minmax(0,1fr);gap:10px;align-items:start;padding:9px 2px;font-size:12px;border-bottom:1px solid #edf0f2;overflow-wrap:anywhere}
+ .table-wrap tbody td:last-child{border-bottom:0}
+ .table-wrap tbody td::before{content:attr(data-label);font-weight:700;color:var(--muted);font-size:11px}
+ .table-wrap tbody td[colspan]::before{display:none}
+ .country-link,.aircraft-link{text-align:left;white-space:normal;overflow-wrap:anywhere;padding:0}
+ .section-head h2{font-size:19px}
+ .section-head button{max-width:100%}
+}
+@media(max-width:390px){.chart{grid-template-columns:repeat(3,minmax(0,1fr))}.kpis{grid-template-columns:1fr}.hero .status{font-size:11px}}

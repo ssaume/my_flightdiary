@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flight Diary Dashboard</title>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <header class="hero">
@@ -11,10 +11,10 @@
   <div class="status"><span class="dot"></span><span>統計截止：<span id="cutoffLabel"></span></span></div>
 </header>
 <main>
-  <section class="toolbar card" id="stickyFilters" aria-label="全站資料篩選">
+  <section class="toolbar card" id="stickyFilters">
     <label>年份<select id="yearFilter"><option value="all">全部年度</option></select></label>
     <label>國家／地區<select id="countryFilter"><option value="all">全部</option></select></label>
-    <button id="resetBtn">重設篩選</button><span class="filter-context" id="filterContext" aria-live="polite"></span>
+    <button id="resetBtn">重設篩選</button><span class="filter-context" id="filterContext"></span>
   </section>
 
   <section class="card upload-card" id="uploadCard">
@@ -32,12 +32,12 @@
   <section class="kpis" id="kpis"></section>
 
   <section class="grid two">
-    <article class="card"><div class="section-head"><div><p class="eyebrow">YEARLY PERFORMANCE</p><h2>年度造訪次數</h2><p class="hint">依抵達年份計算跨境入境次數；同趟旅行造訪兩國，分別各算一次。顏色代表國家／地區。</p></div></div><div class="chart-scroll"><div id="visitChart" class="chart"></div></div><div id="visitLegend" class="country-legend"></div></article>
-    <article class="card"><div class="section-head"><div><p class="eyebrow">TIME SPENT</p><h2>年度停留時間</h2><p class="hint">依各國抵達年份彙整「離境－抵達」的停留時間，圖上以天數呈現，表格保留時分秒。</p></div></div><div class="chart-scroll"><div id="stayChart" class="chart"></div></div><div id="stayLegend" class="country-legend"></div></article>
+    <article class="card"><div class="section-head"><div><p class="eyebrow">YEARLY PERFORMANCE</p><h2>年度造訪次數</h2></div></div><div id="visitChart" class="chart"></div><div id="visitLegend" class="country-legend"></div></article>
+    <article class="card"><div class="section-head"><div><p class="eyebrow">TIME SPENT</p><h2>年度停留時間</h2></div></div><div id="stayChart" class="chart"></div><div id="stayLegend" class="country-legend"></div></article>
   </section>
 
   <section class="card" id="annualTableCard">
-    <div class="section-head"><div><p class="eyebrow">ANNUAL SUMMARY</p><h2 id="annualTitle">年度實績</h2><p class="hint">全部年度時依國家合併；選擇年份則顯示該年實績。點擊國家可篩選下方停留明細。</p></div><button class="ghost" id="downloadCsv">下載目前表格 CSV</button></div>
+    <div class="section-head"><div><p class="eyebrow">ANNUAL SUMMARY</p><h2 id="annualTitle">年度實績</h2></div><button class="ghost" id="downloadCsv">下載目前表格 CSV</button></div>
     <div class="table-wrap"><table><thead><tr><th id="annualPeriodHead">期間</th><th>國家／地區</th><th>造訪次數</th><th>平均到訪間隔</th><th>平均每次停留</th><th>年度總停留</th></tr></thead><tbody id="annualBody"></tbody></table></div>
   </section>
 
@@ -57,9 +57,9 @@
     <div class="table-wrap wide"><table><thead><tr><th>日期</th><th>航班</th><th>出發地</th><th>目的地</th><th>起飛時間</th><th>抵達時間</th><th>飛行時間</th><th>航空公司</th><th>機型</th><th>註冊號</th><th>座位</th><th>狀態</th></tr></thead><tbody id="flightBody"></tbody></table></div>
   </section>
 
-  <section class="card note"><h2>圖表與統計口徑</h2><p><strong>年度造訪次數：</strong>以進入各國／地區的抵達年份計數，不是航班架次；境內轉機或國內線不重複算造訪。<strong>年度停留時間：</strong>以每次進入該國後至離開該國的時間差累計；跨年旅行依抵達年份歸屬。圖表顯示天數（保留一位小數），年度實績與明細顯示到秒。<strong>篩選：</strong>頂部年份、國家篩選會同步作用於圖表、表格及航班明細；點選年度實績國家只會進一步篩選停留明細。尚未出發或尚未完成的行程不列入實績。</p><div id="excluded"></div></section>
+  <section class="card note"><h2>計算規則</h2><p>一次造訪從抵達該國的當地時間開始，到離開該國的當地時間結束；國內線不會重複計次。平均到訪間隔依同年度相鄰兩次抵達時間計算。尚未出發或尚未完成的行程不列入。</p><div id="excluded"></div></section>
 </main>
 <footer>Static dashboard for GitHub Pages · No backend required</footer>
 <noscript><div class="card">此儀表板需要啟用 JavaScript。</div></noscript>
-<script src="data.js?v=8"></script><script src="importer.js?v=8"></script><script src="upload.js?v=8"></script><script src="app.js?v=8"></script>
+<script src="data.js?v=9"></script><script src="importer.js?v=9"></script><script src="upload.js?v=9"></script><script src="app.js?v=9"></script>
 </body></html>

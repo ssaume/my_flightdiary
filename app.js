@@ -38,7 +38,7 @@ function yearlyCountryChart(id,legendId,key){
   const isVisits=key==='visits';
   const formatTotal=n=>isVisits?`${n} 次`:`${(n/86400).toFixed(1)} 天`;
   const chartEl=document.querySelector(id);
-  chartEl.style.minWidth=points.length>9?`${points.length*63}px`:'100%';
+  chartEl.style.minWidth='0';
   chartEl.innerHTML=points.map(point=>{
     const height=point.total/max*205;
     const segments=point.items.map(item=>{
@@ -57,4 +57,14 @@ document.querySelector('#annualBody').addEventListener('click',e=>{const b=e.tar
 document.querySelector('#aircraftBody').addEventListener('click',e=>{const b=e.target.closest('.aircraft-link');if(!b)return;e.stopPropagation();selectedAircraft=selectedAircraft===b.dataset.aircraft?null:b.dataset.aircraft;renderAircraft(aircraftSummary());renderFlights(filteredFlights());document.querySelector('#flightsCard').scrollIntoView({behavior:'smooth',block:'start'})});
 ['#annualTableCard','#aircraftTableCard','#detailsCard','#flightsCard'].forEach(s=>document.querySelector(s).addEventListener('click',e=>e.stopPropagation()));document.addEventListener('click',clearSelections);
 document.querySelector('#downloadCsv').addEventListener('click',()=>{const rows=filteredAnnual(),all=yearEl.value==='all';const csv=['期間,國家／地區,造訪次數,平均到訪間隔,平均每次停留,總停留',...rows.map(x=>[all?`${years[0]}-${years.at(-1)}`:x.year,x.country,x.visits,dur(x.avg_interval_seconds),dur(x.avg_stay_seconds),dur(x.total_stay_seconds)].join(','))].join('\n');const b=new Blob(['﻿'+csv],{type:'text/csv'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='flight-summary.csv';a.click();URL.revokeObjectURL(a.href)});
+function addResponsiveLabels(){
+ document.querySelectorAll('.table-wrap table').forEach(table=>{
+  const headers=[...table.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+  table.querySelectorAll('tbody tr').forEach(row=>{
+   [...row.children].forEach((cell,i)=>{if(cell.tagName==='TD' && !cell.hasAttribute('colspan'))cell.setAttribute('data-label',headers[i]||'');});
+  });
+ });
+}
+const originalRender=render;
+render=function(){originalRender();addResponsiveLabels();};
 document.querySelector('#excluded').innerHTML=`<div class="excluded">已排除 ${D.excludedFlights.length} 筆尚未出發航班：${D.excludedFlights.map(x=>`${x.date} ${x.flight}`).join('、')}</div>`;render();
