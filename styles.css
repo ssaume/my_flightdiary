@@ -79,3 +79,11 @@ th,td{padding:12px 8px;overflow-wrap:anywhere}
  .section-head button{max-width:100%}
 }
 @media(max-width:390px){.chart{grid-template-columns:repeat(3,minmax(0,1fr))}.kpis{grid-template-columns:1fr}.hero .status{font-size:11px}}
+
+/* v10: chart labels occupy normal layout space, not absolute overlap */
+.chart{align-items:stretch!important;grid-auto-rows:205px!important;row-gap:24px!important;column-gap:8px!important;padding-bottom:18px!important}
+.stack-group{height:205px!important;min-height:205px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-end!important;position:relative!important;box-sizing:border-box!important}
+.stack-total{position:static!important;order:1!important;flex:0 0 18px!important;line-height:18px!important;margin:0 0 3px!important;font-size:11px!important;white-space:nowrap!important;overflow:visible!important}
+.stack-bar{order:2!important;flex-shrink:0!important;max-height:145px!important}
+.stack-year{position:static!important;order:3!important;flex:0 0 22px!important;line-height:22px!important;margin-top:5px!important;font-size:12px!important;white-space:nowrap!important}
+@media(max-width:760px){.chart{grid-auto-rows:205px!important;row-gap:22px!important}}

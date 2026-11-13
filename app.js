@@ -40,7 +40,7 @@ function yearlyCountryChart(id,legendId,key){
   const chartEl=document.querySelector(id);
   chartEl.style.minWidth='0';
   chartEl.innerHTML=points.map(point=>{
-    const height=point.total/max*205;
+    const height=point.total/max*145;
     const segments=point.items.map(item=>{
       const portion=point.total?item.value/point.total*100:0;
       const detail=isVisits?`${item.value} 次`:dur(item.value);
