@@ -24,8 +24,33 @@ function renderTable(rows){const all=yearEl.value==='all';document.querySelector
 function renderAircraft(rows){document.querySelector('#aircraftTitle').textContent=yearEl.value==='all'?'全期間機型使用實績':`${yearEl.value} 機型使用實績`;document.querySelector('#aircraftCount').textContent=`${rows.length} 種機型`;document.querySelector('#aircraftHint').textContent=selectedAircraft?`已鎖定「${selectedAircraft}」，點擊空白處解除`:'點擊機型可篩選下方所有航班資料';document.querySelector('#aircraftBody').innerHTML=rows.map(x=>`<tr class="aircraft-row ${selectedAircraft===x.aircraft?'selected':''}"><td><button class="aircraft-link" data-aircraft="${esc(x.aircraft)}">${esc(x.aircraft)}</button></td><td>${x.flights} 次</td><td>${dur(x.avg_interval_seconds)}</td><td>${dur(x.avg_flight_seconds)}</td><td>${dur(x.total_flight_seconds)}</td><td>${x.years}</td></tr>`).join('')||'<tr><td colspan="6">沒有符合條件的資料</td></tr>';}
 function renderDetails(v){document.querySelector('#detailCount').textContent=`${v.length} 筆${selectedSummaryCountry?` · ${selectedSummaryCountry}`:''}`;document.querySelector('#detailHint').textContent=selectedSummaryCountry?`點擊頁面空白處可解除「${selectedSummaryCountry}」篩選`:'點擊上方年度實績中的國家，可快速篩選此表';document.querySelector('#detailBody').innerHTML=v.slice().sort((a,b)=>b.arrival.localeCompare(a.arrival)).map(x=>`<tr><td>${esc(x.country)}</td><td>${dt(x.arrival)}</td><td>${dt(x.departure)}</td><td>${dur(x.durationSeconds)}</td><td>${esc(x.arrivalFlight)}</td><td>${esc(x.departureFlight)}</td><td>${esc(x.arrivalAirport)}</td><td>${esc(x.departureAirport)}</td></tr>`).join('')||'<tr><td colspan="8">沒有符合條件的資料</td></tr>';}
 function renderFlights(f){document.querySelector('#flightCount').textContent=`${f.length} 筆${selectedAircraft?` · ${selectedAircraft}`:''}`;document.querySelector('#flightBody').innerHTML=f.slice().sort((a,b)=>b.departure.localeCompare(a.departure)).map(x=>`<tr class="${x.completed?'':'future-row'}"><td>${x.date}</td><td>${esc(x.flight)}</td><td>${esc(x.from)}</td><td>${esc(x.to)}</td><td>${dt(x.departure)}</td><td>${dt(x.arrival)}</td><td>${esc(x.duration)}</td><td>${esc(x.airline)}</td><td>${esc(x.aircraft)}</td><td>${esc(x.registration)||'—'}</td><td>${esc(x.seatNumber)||'—'}</td><td>${x.completed?'已完成':'未出發'}</td></tr>`).join('')||'<tr><td colspan="12">沒有符合條件的資料</td></tr>';}
-function chart(id,rows,key,fmt){let grouped;if(yearEl.value==='all')grouped=years.map(year=>({year,value:D.annual.filter(x=>x.year===year&&(countryEl.value==='all'||x.country===countryEl.value)).reduce((a,b)=>a+b[key],0)})).filter(x=>x.value>0);else grouped=[{year:Number(yearEl.value),value:rows.reduce((a,b)=>a+b[key],0)}];const max=Math.max(...grouped.map(x=>x.value),1);document.querySelector(id).innerHTML=grouped.map(x=>`<div class="bar-group"><div class="bar" style="height:${Math.max(4,x.value/max*220)}px"><span>${fmt(x.value)}</span></div><div class="xlab">${x.year}</div></div>`).join('')||'<p>沒有資料</p>';}
-function render(){const r=filteredAnnual();renderKpis(r);renderTable(r);renderAircraft(aircraftSummary());renderDetails(filteredVisits());renderFlights(filteredFlights());chart('#visitChart',r,'visits',v=>v+'次');chart('#stayChart',r,'total_stay_seconds',v=>Math.round(v/86400)+'天');}
+const countryPalette=['#147d91','#e09c3c','#7c65c1','#53a26a','#db6c83','#517dc7','#a48a43','#3f9e99','#b47aa7','#808f54'];
+function yearlyCountryChart(id,legendId,key){
+  const chosenYears=yearEl.value==='all'?years:[Number(yearEl.value)];
+  const records=D.annual.filter(x=>chosenYears.includes(Number(x.year))&&(countryEl.value==='all'||x.country===countryEl.value));
+  const names=[...new Set(records.map(x=>x.country))].sort((a,b)=>a.localeCompare(b,'zh-Hant'));
+  const colors=new Map(names.map((c,i)=>[c,countryPalette[i%countryPalette.length]]));
+  const points=chosenYears.map(year=>{
+    const items=records.filter(x=>Number(x.year)===year).map(x=>({country:x.country,value:Number(x[key])||0})).filter(x=>x.value>0);
+    return {year,items,total:items.reduce((sum,x)=>sum+x.value,0)};
+  });
+  const max=Math.max(1,...points.map(x=>x.total));
+  const isVisits=key==='visits';
+  const formatTotal=n=>isVisits?`${n} 次`:`${(n/86400).toFixed(1)} 天`;
+  const chartEl=document.querySelector(id);
+  chartEl.style.minWidth=points.length>9?`${points.length*63}px`:'100%';
+  chartEl.innerHTML=points.map(point=>{
+    const height=point.total/max*205;
+    const segments=point.items.map(item=>{
+      const portion=point.total?item.value/point.total*100:0;
+      const detail=isVisits?`${item.value} 次`:dur(item.value);
+      return `<div class="stack-segment" style="height:${portion}%;background:${colors.get(item.country)}" title="${esc(point.year)} · ${esc(item.country)}：${detail}" aria-label="${esc(item.country)}：${detail}"></div>`;
+    }).join('');
+    return `<div class="stack-group"><div class="stack-total">${formatTotal(point.total)}</div><div class="stack-bar" style="height:${Math.max(point.total?5:0,height)}px">${segments}</div><div class="stack-year">${point.year}</div></div>`;
+  }).join('')||'<p>沒有符合條件的資料</p>';
+  document.querySelector(legendId).innerHTML=names.map(c=>`<span class="legend-item"><i style="background:${colors.get(c)}"></i>${esc(c)}</span>`).join('')||'<span class="hint">目前篩選範圍無國家資料</span>';
+}
+function render(){const r=filteredAnnual();renderKpis(r);renderTable(r);renderAircraft(aircraftSummary());renderDetails(filteredVisits());renderFlights(filteredFlights());yearlyCountryChart('#visitChart','#visitLegend','visits');yearlyCountryChart('#stayChart','#stayLegend','total_stay_seconds');document.querySelector('#filterContext').textContent=`目前：${yearEl.value==='all'?'全部年度':yearEl.value+' 年'} · ${countryEl.value==='all'?'全部國家／地區':countryEl.value}`;}
 function clearSelections(){if(!selectedSummaryCountry&&!selectedAircraft)return;selectedSummaryCountry=null;selectedAircraft=null;render();}
 yearEl.addEventListener('change',()=>{selectedSummaryCountry=null;selectedAircraft=null;render()});countryEl.addEventListener('change',()=>{selectedSummaryCountry=null;selectedAircraft=null;render()});document.querySelector('#resetBtn').addEventListener('click',()=>{yearEl.value='all';countryEl.value='all';selectedSummaryCountry=null;selectedAircraft=null;render()});
 document.querySelector('#annualBody').addEventListener('click',e=>{const b=e.target.closest('.country-link');if(!b)return;e.stopPropagation();selectedSummaryCountry=selectedSummaryCountry===b.dataset.country?null:b.dataset.country;renderTable(filteredAnnual());renderDetails(filteredVisits());document.querySelector('#detailsCard').scrollIntoView({behavior:'smooth',block:'start'})});
